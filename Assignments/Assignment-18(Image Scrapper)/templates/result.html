@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraping Results</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Scraping Results</h1>
+    <table>
+        <tr>
+            <th>Video URL</th>
+            <th>Thumbnail URL</th>
+            <th>Title</th>
+            <th>Views</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td><a href="{{ row[0] }}">{{ row[0] }}</a></td>
+            <td><img src="{{ row[1] }}" width="120" height="90"></td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
